@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+
+    <preference for="Magento\Catalog\Block\Product\Widget\NewWidget" type="Commerce9\Patch\Block\Product\Widget\NewWidget" />
+
+</config>

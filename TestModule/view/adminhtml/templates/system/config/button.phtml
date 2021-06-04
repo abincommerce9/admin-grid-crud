@@ -1,0 +1,27 @@
+<?php /* @var $block \Skumar\Sync\Block\System\Config\Synchronize */ ?>
+<script>
+require([
+    'jquery',
+    'prototype',
+], function(jQuery){
+    function syncronize() {
+        params = {
+        };
+
+        new Ajax.Request('<?php /* @escapeNotVerified */ echo $block->getAjaxSyncUrl() ?>', {
+            loaderArea:     false,
+            asynchronous:   true,
+            parameters:     params,
+            onSuccess: function(transport) {
+                var response = JSON.parse(transport.responseText);
+            }
+        });
+    }
+
+    jQuery('#synchronize_button').click(function () {
+        syncronize();
+    });
+});
+</script>
+
+<?php echo $block->getButtonHtml() ?>

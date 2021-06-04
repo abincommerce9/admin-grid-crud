@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Commerce9_Quote::helloworld" title="Commerce9" module="Commerce9_Quote" sortOrder="51" resource="Commerce9_Quote::helloworld"/>
+        
+        <add id="Commerce9_Quote::quote" title="Customer Quotes" module="Commerce9_Quote" sortOrder="10" action="cquotesid/appdashboard/index" resource="Commerce9_Quote::quote" parent="Commerce9_Quote::helloworld"/>
+        
+    </menu>
+</config>

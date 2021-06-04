@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <section1>
+            <general>
+                <color>1</color>
+                <display_text>This is the default value for Display Text</display_text>
+                <area1>Default value for text area</area1>
+                <checkbox1>0</checkbox1>
+                
+            </general>
+        </section1>
+    </default>
+</config>

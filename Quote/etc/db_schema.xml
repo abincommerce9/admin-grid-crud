@@ -1,0 +1,16 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+<table name="commerce9_quote" resource="default" engine="innodb"
+           comment="Commerce9 Quotes Storage Table">
+    <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true" comment="ID"/>
+    <column xsi:type="varchar" name="name" length="255" nullable="false"  comment="Customer Name"/>
+    <column xsi:type="varchar" name="email" length="255" nullable="false"  comment="Customer Email"/>
+    <column xsi:type="text" name="quote_text" nullable="false"  comment="Customer Quote"/>
+    <column xsi:type="varchar" name="product_name" length="255" nullable="false"  comment="Product Name"/>
+    <column xsi:type="varchar" name="product_price" length="255" nullable="false" comment="Product Price"/>
+    <column xsi:type="timestamp" name="updated_at" nullable="false"  default="CURRENT_TIMESTAMP" comment="Created At"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+         <column name="id"/>
+    </constraint>
+    
+</table>
+</schema>

@@ -1,0 +1,55 @@
+<?php
+if(!isset($_COOKIE['viewed'])) {
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $objectManager->get('Commerce9\Popup\Cookie\Cookie') 
+    ->set('value', time()+86400);
+
+?>
+
+<div id="popup-modal">
+
+    <p><?php
+            echo $this->helper('Commerce9\Popup\Helper\Data')->getConfigValue('offer_description');
+            ?></p></div>
+
+<script>
+require(
+[
+    'jquery',
+    'Magento_Ui/js/modal/modal'
+],
+function(
+    $,
+    modal
+) {
+    let options = {
+        type: 'popup',
+        responsive: true,
+        innerScroll: true,
+        title: '<?php  echo $this->helper('Commerce9\Popup\Helper\Data')->getConfigValue('offer_title'); ?>',
+        modalClass: 'custom-modal',
+        buttons: [{
+            text: $.mage.__('Close'),
+            class: '',
+            click: function () {
+                this.closeModal();
+            }
+        }]
+    };
+    
+    let $myModal = $('#popup-modal');
+    let popup = modal(options, $myModal);
+    
+    //this opens the modal, you can use some click event or whatever you need to trigger the modal here
+setTimeout(function() {
+                $myModal.modal('openModal');
+            }, <?php echo  $this->helper('Commerce9\Popup\Helper\Data')->getConfigValue('popup_delay').'000' ?>);
+
+    
+}
+);
+</script>
+<?php 
+}
+
+?>

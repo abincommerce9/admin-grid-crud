@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="tab1" translate="label" sortOrder="10">
+            <label>Commerce9</label>
+        </tab>
+        <section id="section1" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Input Options</label>
+            <tab>tab1</tab>
+            <resource>Commerce9_TestModule::testmodule_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+           
+            <field id="color" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Select Color</label>
+                <source_model>Commerce9\TestModule\Model\Config\Source\Colours</source_model>
+            </field>
+            <field id="display_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Display Text</label>
+                <comment>Field for text input</comment>
+            </field>
+            <field id="area1" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Text Area</label>
+                <comment>Field for text input</comment>
+            </field>
+            <field id="checkbox1" translate="label" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="0">
+               <label>Checkbox</label>
+               <frontend_model>Commerce9\TestModule\Block\System\Config\Checkbox</frontend_model>
+            </field>
+           <field id="build_indexes" translate="label comment tooltip" type="button" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>Commerce9 Button</label>
+            <frontend_model>Commerce9\TestModule\Block\System\Config\Button</frontend_model>
+            </field>   
+
+            </group>
+        </section>
+    </system>
+</config>

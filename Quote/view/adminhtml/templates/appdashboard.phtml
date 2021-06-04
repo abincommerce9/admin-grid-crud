@@ -1,0 +1,53 @@
+<?php $collection = $block->getCollection();
+if ($collection->count()):
+?>
+<div class="table-wrapper orders-history">
+    <table class="data table table-order-items history" id="my-orders-table">
+        <caption class="table-caption"><?php echo __('Quotes Record') ?></caption>
+        <thead>
+        <tr>
+            <th scope="col" class="col id"><?php echo __('ID') ?></th>
+            <th scope="col" class="col name"><?php echo __('Name') ?></th>
+            <th scope="col" class="col email"><?php echo __('Email') ?></th>
+            <th scope="col" class="col email"><?php echo __('Product Name') ?></th>
+            <th scope="col" class="col telephone"><?php echo __('Product Price') ?></th>
+            <th scope="col" class="col telephone"><?php echo __('Quote') ?></th>
+            <th scope="col" class="col createat"><?php echo __('Created At') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+ foreach ($collection as $item): ?>
+        <tr>
+            <td data-th="<?= $block->escapeHtml(__('ID')) ?>" class="col id">
+                <?php echo $item['id'] ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('Name')) ?>" class="col name">
+                <?php echo $item['name'] ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('Email')) ?>" class="col email">
+                <?php echo $item['email'] ?>
+            </td>
+
+            <td data-th="<?= $block->escapeHtml(__('Product Name')) ?>" class="col email">
+                <?php echo $item['product_name'] ?>
+            <td data-th="<?= $block->escapeHtml(__('Product Price')) ?>" class="col email">
+                <?php echo $item['product_price'] ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('Quote')) ?>" class="col telephone">
+                <?php echo $item['quote_text'] ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('Created At')) ?>"
+                class="col title"><?php echo date('Y-m-d', strtotime($item['created_at'])); ?></td>
+        </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<?php
+ else:
+ 	echo "No quotes to show!";
+ endif;
+ ?>
+
+
